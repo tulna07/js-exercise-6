@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.6rem;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --primary-color: #e13f5e;
+}
+
+.theme-green {
+  --primary-color: #3fe1ce;
+}
+
+.header {
+  padding: 2rem 4rem;
+
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.header__logo {
+  max-width: 10rem;
+}
+
+.primary-heading {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.primary-heading span {
+  font-size: 1.5rem;
+}
+
+.btn-box {
+  gap: 2rem;
+}
+
+.btn-custom {
+  padding: 0.8rem 2rem;
+
+  background-color: var(--primary-color);
+  border: 0.2rem solid var(--primary-color);
+
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 500;
+
+  transition: all 0.2s;
+}
+
+.btn-custom:focus {
+  box-shadow: none;
+}
+
+.btn-custom > i {
+  font-size: 1.2rem;
+}
+
+.btn-custom:hover {
+  background-color: transparent;
+
+  color: var(--primary-color);
+}
+
+.btn-toggle-theme {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.btn-toggle-theme:hover {
+  color: var(--primary-color);
+}
+
+.question-list {
+  padding: 1rem 3rem;
+  gap: 1rem;
+
+  opacity: 0;
+
+  border-radius: 0.3rem;
+  background-color: #fff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+
+  color: #000;
+
+  top: 100%;
+  left: 0;
+
+  transition: all 0.5s;
+}
+
+.btn-custom:hover .question-list {
+  opacity: 1;
+  top: 130%;
+}
+
+.question {
+  white-space: nowrap;
+}
+
+.question:hover {
+  color: var(--primary-color);
+}
