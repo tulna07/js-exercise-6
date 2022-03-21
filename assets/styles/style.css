@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #e13f5e;
+  --bg-gradient: linear-gradient(to left, #e13f5e, #f55372, #ff6786);
+  --btn-color: #fff;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -11,22 +17,22 @@ html {
 body {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 1.6rem;
+  background: var(--bg-gradient);
 }
 
 ul {
   list-style: none;
 }
 
-:root {
-  --primary-color: #e13f5e;
-}
-
 .theme-green {
   --primary-color: #3fe1ce;
+  --bg-gradient: linear-gradient(to left, #3fe1ce, #53f5e2, #67fff6);
+  --btn-color: rgba(0, 0, 0, 0.8);
 }
 
 .header {
   padding: 2rem 4rem;
+  background-color: #fff;
 
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
 }
@@ -56,7 +62,7 @@ ul {
   border: 0.2rem solid var(--primary-color);
 
   font-size: 1.5rem;
-  color: #fff;
+  color: var(--btn-color);
   font-weight: 500;
 
   transition: all 0.2s;
