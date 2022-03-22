@@ -5,7 +5,8 @@
 }
 
 :root {
-  --primary-color: #e13f5e;
+  --primary-color: 225, 63, 94;
+  --dark-primary-color: 195, 33, 64;
   --bg-gradient: linear-gradient(to left, #e13f5e, #f55372, #ff6786);
   --btn-color: #fff;
 }
@@ -25,7 +26,8 @@ ul {
 }
 
 .theme-green {
-  --primary-color: #3fe1ce;
+  --primary-color: 63, 225, 206;
+  --dark-primary-color: 33, 195, 176;
   --bg-gradient: linear-gradient(to left, #3fe1ce, #53f5e2, #67fff6);
   --btn-color: rgba(0, 0, 0, 0.8);
 }
@@ -58,8 +60,8 @@ ul {
 .btn-custom {
   padding: 0.8rem 2rem;
 
-  background-color: var(--primary-color);
-  border: 0.2rem solid var(--primary-color);
+  background-color: rgb(var(--primary-color));
+  border: 0.2rem solid rgb(var(--primary-color));
 
   font-size: 1.5rem;
   color: var(--btn-color);
@@ -79,7 +81,7 @@ ul {
 .btn-custom:hover {
   background-color: transparent;
 
-  color: var(--primary-color);
+  color: rgb(var(--primary-color));
 }
 
 .btn-toggle-theme {
@@ -88,7 +90,7 @@ ul {
 }
 
 .btn-toggle-theme:hover {
-  color: var(--primary-color);
+  color: rgb(var(--primary-color));
 }
 
 .question-list {
@@ -105,6 +107,7 @@ ul {
 
   top: 100%;
   left: 0;
+  z-index: 2;
 
   transition: all 0.5s;
 }
@@ -119,5 +122,57 @@ ul {
 }
 
 .question:hover {
-  color: var(--primary-color);
+  color: rgb(var(--primary-color));
+}
+
+.main .row {
+  gap: 2rem;
+}
+
+.step-box {
+  padding: 4rem 2rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.fa-earlybirds {
+  font-size: 3.2rem;
+
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  animation: shakeBird 1.5s infinite;
+}
+
+@keyframes shakeBird {
+  0% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+
+.form-control {
+  font-size: 1.6rem;
+}
+
+.form-control:focus {
+  border-color: rgb(var(--primary-color), 0.5);
+  box-shadow: 0 0 0.5rem rgb(var(--primary-color), 0.5);
+}
+
+.card-body .btn-custom {
+  padding: 0.5rem 1.5rem;
+  color: #000;
+}
+
+.card-body .btn-custom:hover {
+  color: #000;
+  background-color: rgb(var(--dark-primary-color));
 }
