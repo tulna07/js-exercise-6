@@ -6,3 +6,11 @@ export const findSmallestPositiveInt = x => {
 
   return counter;
 };
+
+// Question 2
+export const findSumSn = (x, n) => {
+  let sum = 0;
+  for (let i = 1; i <= n; ++i) sum += x ** i;
+
+  return sum;
+};
