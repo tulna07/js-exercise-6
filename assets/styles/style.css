@@ -117,15 +117,16 @@ ul {
   top: 130%;
 }
 
-.question {
+.btn-open-question {
   white-space: nowrap;
 }
 
-.question:hover {
+.btn-open-question:hover {
   color: rgb(var(--primary-color));
 }
 
-.main .row {
+.main .question-box {
+  display: none;
   gap: 2rem;
 }
 
