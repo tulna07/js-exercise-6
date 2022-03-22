@@ -41,11 +41,11 @@ dom.loopQ1SubmitBtn.addEventListener("click", () => {
   const x = +dom.loopQ1InputX.value;
 
   if (isInvalid(x, Number.isInteger)) {
-    dom.loopQ1Result.innerHTML = `❌ Invalid input. Please enter a integer number >= 0`;
+    dom.loopQ1Result.innerHTML = `❌ Invalid input. Please enter a integer number >= 0.`;
     return;
   }
 
-  dom.loopQ1Result.innerHTML = `n = ${loop.findSmallestPositiveInt(x)}`;
+  dom.loopQ1Result.innerHTML = `n = ${loop.findSmallestPositiveInt(x)}.`;
 });
 
 // Question 2
@@ -53,10 +53,17 @@ dom.loopQ2SubmitBtn.addEventListener("click", () => {
   const x = +dom.loopQ2InputX.value;
   const n = +dom.loopQ2InputN.value;
 
-  if (isInvalid(x, Number.isInteger)) {
-    dom.loopQ1Result.innerHTML = `❌ Invalid input. Please enter a integer number >= 0`;
+  dom.loopQ2Result.innerHTML = "";
+
+  if (isInvalid(x)) {
+    dom.loopQ2Result.innerHTML = `❌ Invalid input "x ". Please enter a number >= 0.`;
     return;
   }
 
-  dom.loopQ1Result.innerHTML = `n = ${loop.findSmallestPositiveInt(x)}`;
+  if (isInvalid(n, n => !(!Number.isInteger(n) || n < 1))) {
+    dom.loopQ2Result.innerHTML += `❌ Invalid input "n". Please enter a integer number >= 1.`;
+    return;
+  }
+
+  dom.loopQ2Result.innerHTML = `S(n) = ${loop.findSumSn(x, n)}.`;
 });

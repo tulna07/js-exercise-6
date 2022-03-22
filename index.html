@@ -138,14 +138,18 @@
           <div class="col-5">
             <div class="step-box bg-white position-relative">
               <i class="fa-brands fa-earlybirds position-absolute"></i>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-              quibusdam reiciendis soluta asperiores quisquam doloremque facilis
-              pariatur fugiat amet molestias, sed, quo, ad optio iste debitis
-              vel consequatur quia labore? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Unde quibusdam reiciendis soluta
-              asperiores quisquam doloremque facilis pariatur fugiat amet
-              molestias, sed, quo, ad optio iste debitis vel consequatur quia
-              labore?
+              <strong>Loop | Question 2:</strong> Viết chương trình nhập vào 2
+              số <em>x</em>, <em>n</em> tính tổng:
+              <em>S(n) = x + x^2 + x^3 + … + x^n</em><br />
+              <strong>Các bước thực hiện:</strong><br />
+              <strong>- Bước 1:</strong> Thiết kế giao diện, cho người dùng nhập
+              số x là số >= 0, số n là số nguyên dương >= 1 <br />
+              <strong>- Bước 2:</strong> Nếu không thỏa điều kiện ở bước 1 thì
+              in ra thông báo input không hợp lệ và kết thúc chương trình.<br />
+              <strong>- Bước 3:</strong> Nếu thỏa điều kiện bước 1 thì dùng vòng
+              lặp while với các điều kiện và biến hỗ trợ để tìm ra số tổng
+              S(n).<br />
+              <strong>- Bước 4:</strong> Hiển thị kết quả ở bước 3 ra giao diện.
             </div>
           </div>
           <div class="col-4">
@@ -164,7 +168,8 @@
                     placeholder="Default is 0"
                     aria-describedby="helpId"
                   />
-                  <small id="helpId" class="text-muted">Enter a number</small
+                  <small id="helpId" class="text-muted"
+                    >Enter a number >= 0</small
                   ><br />
                   <label for="">Number n:</label>
                   <input
@@ -175,7 +180,9 @@
                     placeholder="Default is 0"
                     aria-describedby="helpId"
                   />
-                  <small id="helpId" class="text-muted">Enter a number</small>
+                  <small id="helpId" class="text-muted"
+                    >Enter a integer number >= 1</small
+                  >
                 </div>
                 <div class="btn-box text-center">
                   <button id="loop-q2-btn-submit" class="btn btn-custom">
