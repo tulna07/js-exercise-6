@@ -13,6 +13,10 @@ export const questionBoxes = document.querySelectorAll(".question-box");
 /**
  * Loop questions DOM ---------------------------------
  */
+// Question 1
+export const loopQ1InputX = document.querySelector("#loop-q1-input-x");
+export const loopQ1SubmitBtn = document.querySelector("#loop-q1-btn-submit");
+export const loopQ1Result = document.querySelector("#loop-q1-result");
 
 /**
  * Array questions DOM ---------------------------------
