@@ -18,6 +18,12 @@ export const loopQ1InputX = document.querySelector("#loop-q1-input-x");
 export const loopQ1SubmitBtn = document.querySelector("#loop-q1-btn-submit");
 export const loopQ1Result = document.querySelector("#loop-q1-result");
 
+// Question 2
+export const loopQ2InputX = document.querySelector("#loop-q2-input-x");
+export const loopQ2InputN = document.querySelector("#loop-q2-input-n");
+export const loopQ2SubmitBtn = document.querySelector("#loop-q2-btn-submit");
+export const loopQ2Result = document.querySelector("#loop-q2-result");
+
 /**
  * Array questions DOM ---------------------------------
  */
