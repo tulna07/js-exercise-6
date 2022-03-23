@@ -18,4 +18,4 @@ export const isInvalidNumber = (input, fn = para => true) => {
 export const isInvalidArray = arr =>
   arr.find(elem => Number.isNaN(+elem)) ?? false;
 
-export const removeSpaceInArray = arr => arr.filter(elem => elem !== "");
+export const removeEmptyStrInArray = arr => arr.filter(elem => elem !== "");
