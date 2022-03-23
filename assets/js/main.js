@@ -1,7 +1,7 @@
 import {
   isInvalidNumber,
   isInvalidArray,
-  removeSpaceInArray,
+  removeEmptyStrInArray,
 } from "./modules/helpers.js";
 import * as dom from "./modules/dom.js";
 import * as loop from "./modules/loop.js";
@@ -112,7 +112,7 @@ for (const [idx, arrayBtn] of Object.entries(dom.arrayBtns)) {
       return;
     }
 
-    const processedArray = removeSpaceInArray(unprocessedArray);
+    const processedArray = removeEmptyStrInArray(unprocessedArray);
     dom.arrayResult.innerHTML = `Your array: ${processedArray}`;
   });
 }
