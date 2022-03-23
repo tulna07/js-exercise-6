@@ -1,6 +1,11 @@
-import { isInvalid } from "./modules/helpers.js";
+import {
+  isInvalidNumber,
+  isInvalidArray,
+  removeSpaceInArray,
+} from "./modules/helpers.js";
 import * as dom from "./modules/dom.js";
 import * as loop from "./modules/loop.js";
+import * as array from "./modules/array.js";
 
 /**
  * General Events ---------------------------------
@@ -40,7 +45,7 @@ dom.toggleThemeBtn.onclick = function () {
 dom.loopQ1SubmitBtn.addEventListener("click", () => {
   const x = +dom.loopQ1InputX.value;
 
-  if (isInvalid(x, Number.isInteger)) {
+  if (isInvalidNumber(x, Number.isInteger)) {
     dom.loopQ1Result.innerHTML = `❌ Invalid input. Please enter a integer number >= 0.`;
     return;
   }
@@ -55,12 +60,12 @@ dom.loopQ2SubmitBtn.addEventListener("click", () => {
 
   dom.loopQ2Result.innerHTML = "";
 
-  if (isInvalid(x)) {
+  if (isInvalidNumber(x)) {
     dom.loopQ2Result.innerHTML = `❌ Invalid input "x". Please enter a number >= 0.`;
     return;
   }
 
-  if (isInvalid(n, n => !(!Number.isInteger(n) || n < 1))) {
+  if (isInvalidNumber(n, n => !(!Number.isInteger(n) || n < 1))) {
     dom.loopQ2Result.innerHTML += `❌ Invalid input "n". Please enter a integer number >= 1.`;
     return;
   }
@@ -72,7 +77,7 @@ dom.loopQ2SubmitBtn.addEventListener("click", () => {
 dom.loopQ3SubmitBtn.addEventListener("click", () => {
   const n = +dom.loopQ3InputN.value;
 
-  if (isInvalid(n, Number.isInteger)) {
+  if (isInvalidNumber(n, Number.isInteger)) {
     dom.loopQ3Result.innerHTML = `❌ Invalid input "n". Please enter a integer number >= 0.`;
     return;
   }
@@ -87,10 +92,27 @@ dom.loopQ4SubmitBtn.addEventListener("click", () => {
   dom.loopQ4Result.innerHTML = "Notification Here 😁";
   dom.divBoxes.innerHTML = "";
 
-  if (isInvalid(input, Number.isInteger)) {
+  if (isInvalidNumber(input, Number.isInteger)) {
     dom.loopQ4Result.innerHTML = `❌ Invalid input. Please enter a integer number >= 0.`;
     return;
   }
 
   dom.divBoxes.innerHTML = loop.generateDivs(input);
 });
+
+/**
+ * Loop questions ---------------------------------
+ */
+// Question 1 - 10
+for (const [idx, arrayBtn] of Object.entries(dom.arrayBtns)) {
+  arrayBtn.addEventListener("click", () => {
+    const unprocessedArray = dom.arrayInput.value.trim().split(" ");
+    if (isInvalidArray(unprocessedArray)) {
+      dom.arrayResult.innerHTML = "❌ Invalid array.";
+      return;
+    }
+
+    const processedArray = removeSpaceInArray(unprocessedArray);
+    dom.arrayResult.innerHTML = `Your array: ${processedArray}`;
+  });
+}

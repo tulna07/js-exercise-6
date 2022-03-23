@@ -38,3 +38,6 @@ export const loopQ4Result = document.querySelector("#loop-q4-result");
 /**
  * Array questions DOM ---------------------------------
  */
+export const arrayInput = document.querySelector("#array-input");
+export const arrayBtns = document.querySelectorAll(".btn-array");
+export const arrayResult = document.querySelector("#array-result");
