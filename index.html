@@ -241,7 +241,7 @@
                 </div>
               </div>
               <div id="loop-q3-result" class="card-footer text-muted">
-                Footer
+                Notification Here 😁
               </div>
             </div>
           </div>
@@ -252,14 +252,20 @@
           <div class="col-5">
             <div class="step-box bg-white position-relative">
               <i class="fa-brands fa-earlybirds position-absolute"></i>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-              quibusdam reiciendis soluta asperiores quisquam doloremque facilis
-              pariatur fugiat amet molestias, sed, quo, ad optio iste debitis
-              vel consequatur quia labore? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Unde quibusdam reiciendis soluta
-              asperiores quisquam doloremque facilis pariatur fugiat amet
-              molestias, sed, quo, ad optio iste debitis vel consequatur quia
-              labore?
+              <strong>Loop | Question 4:</strong> Hãy viết chương trình nhập vào
+              số lượng div muốn tạo, click vào button sẽ in ra thẻ div. Nếu div
+              nào vị trí <em style="color: red">chẵn</em> thì background màu
+              <em style="color: red">đỏ</em> và
+              <em style="color: blue">lẻ</em> thì background màu
+              <em style="color: blue">xanh</em>.<br />
+              <strong>Các bước thực hiện:</strong><br />
+              <strong>- Bước 1:</strong> Thiết kế giao diện, cho người dùng nhập
+              số lượng div muốn tạo là số nguyên >= 0<br />
+              <strong>- Bước 2:</strong> Nếu không thỏa điều kiện ở bước 1 thì
+              in ra thông báo input không hợp lệ và kết thúc chương trình.<br />
+              <strong>- Bước 3:</strong> Nếu thỏa điều kiện bước 1 thì dùng vòng
+              lặp for và câu điều kiện để nhận được div tương ứng.<br />
+              <strong>- Bước 4:</strong> Hiển thị kết quả ở bước 3 ra giao diện.
             </div>
           </div>
           <div class="col-4">
@@ -269,37 +275,30 @@
               </div>
               <div class="card-body">
                 <div class="form-group">
-                  <label for="">Number x:</label>
+                  <label for="">The number of div(s) want to generate:</label>
                   <input
                     type="text"
                     name=""
-                    id="q1-input-x"
+                    id="loop-q4-input"
                     class="form-control"
-                    placeholder=""
+                    placeholder="Default is 0"
                     aria-describedby="helpId"
                   />
                   <small id="helpId" class="text-muted"
-                    >Enter a number >= 0</small
+                    >Enter a integer number >= 0</small
                   ><br />
-                  <label for="">Number n:</label>
-                  <input
-                    type="text"
-                    name=""
-                    id="q1-input-n"
-                    class="form-control"
-                    placeholder=""
-                    aria-describedby="helpId"
-                  />
-                  <small id="helpId" class="text-muted"
-                    >Enter a number >= 0</small
-                  >
                 </div>
                 <div class="btn-box text-center">
-                  <button class="btn btn-custom">Submit</button>
+                  <button id="loop-q4-btn-submit" class="btn btn-custom">
+                    Generate
+                  </button>
                 </div>
               </div>
-              <div class="card-footer text-muted">Footer</div>
+              <div id="loop-q4-result" class="card-footer text-muted">
+                Notification Here 😁
+              </div>
             </div>
+            <div id="div-boxes" class="position-absolute"></div>
           </div>
         </div>
 

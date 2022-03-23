@@ -177,3 +177,9 @@ ul {
   color: #000;
   background-color: rgb(var(--dark-primary-color));
 }
+
+#div-boxes {
+  width: 25%;
+  top: 0;
+  left: 100%;
+}

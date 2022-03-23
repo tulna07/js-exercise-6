@@ -68,7 +68,7 @@ dom.loopQ2SubmitBtn.addEventListener("click", () => {
   dom.loopQ2Result.innerHTML = `S(n) = ${loop.findSumSn(x, n)}.`;
 });
 
-// Question 2
+// Question 3
 dom.loopQ3SubmitBtn.addEventListener("click", () => {
   const n = +dom.loopQ3InputN.value;
 
@@ -78,4 +78,19 @@ dom.loopQ3SubmitBtn.addEventListener("click", () => {
   }
 
   dom.loopQ3Result.innerHTML = `${n}! = ${loop.loopFactorial(n)}.`;
+});
+
+// Question 4
+dom.loopQ4SubmitBtn.addEventListener("click", () => {
+  const input = +dom.loopQ4Input.value;
+
+  dom.loopQ4Result.innerHTML = "Notification Here 😁";
+  dom.divBoxes.innerHTML = "";
+
+  if (isInvalid(input, Number.isInteger)) {
+    dom.loopQ4Result.innerHTML = `❌ Invalid input. Please enter a integer number >= 0.`;
+    return;
+  }
+
+  dom.divBoxes.innerHTML = loop.generateDivs(input);
 });
