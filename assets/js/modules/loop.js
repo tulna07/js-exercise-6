@@ -29,3 +29,23 @@ export const loopFactorial = n => {
 
   return result;
 };
+
+// Question 4
+export const divHTMLtemplate = (idx, bgColor) =>
+  `<div style="background-color: ${bgColor}">
+    div #${idx}
+  </div>`;
+
+export const generateDivs = input => {
+  let result = "";
+  for (let i = 1; i <= input; ++i) {
+    if (!(i % 2)) {
+      result += divHTMLtemplate(i, "red");
+      continue;
+    }
+
+    result += divHTMLtemplate(i, "blue");
+  }
+
+  return result;
+};

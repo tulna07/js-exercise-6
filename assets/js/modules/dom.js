@@ -29,6 +29,12 @@ export const loopQ3InputN = document.querySelector("#loop-q3-input-n");
 export const loopQ3SubmitBtn = document.querySelector("#loop-q3-btn-submit");
 export const loopQ3Result = document.querySelector("#loop-q3-result");
 
+// Question 4
+export const loopQ4Input = document.querySelector("#loop-q4-input");
+export const loopQ4SubmitBtn = document.querySelector("#loop-q4-btn-submit");
+export const divBoxes = document.querySelector("#div-boxes");
+export const loopQ4Result = document.querySelector("#loop-q4-result");
+
 /**
  * Array questions DOM ---------------------------------
  */
