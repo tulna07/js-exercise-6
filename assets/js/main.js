@@ -56,7 +56,7 @@ dom.loopQ2SubmitBtn.addEventListener("click", () => {
   dom.loopQ2Result.innerHTML = "";
 
   if (isInvalid(x)) {
-    dom.loopQ2Result.innerHTML = `❌ Invalid input "x ". Please enter a number >= 0.`;
+    dom.loopQ2Result.innerHTML = `❌ Invalid input "x". Please enter a number >= 0.`;
     return;
   }
 
@@ -66,4 +66,16 @@ dom.loopQ2SubmitBtn.addEventListener("click", () => {
   }
 
   dom.loopQ2Result.innerHTML = `S(n) = ${loop.findSumSn(x, n)}.`;
+});
+
+// Question 2
+dom.loopQ3SubmitBtn.addEventListener("click", () => {
+  const n = +dom.loopQ3InputN.value;
+
+  if (isInvalid(n, Number.isInteger)) {
+    dom.loopQ3Result.innerHTML = `❌ Invalid input "n". Please enter a integer number >= 0.`;
+    return;
+  }
+
+  dom.loopQ3Result.innerHTML = `${n}! = ${loop.loopFactorial(n)}.`;
 });

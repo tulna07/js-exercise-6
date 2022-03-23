@@ -24,6 +24,11 @@ export const loopQ2InputN = document.querySelector("#loop-q2-input-n");
 export const loopQ2SubmitBtn = document.querySelector("#loop-q2-btn-submit");
 export const loopQ2Result = document.querySelector("#loop-q2-result");
 
+// Question 3
+export const loopQ3InputN = document.querySelector("#loop-q3-input-n");
+export const loopQ3SubmitBtn = document.querySelector("#loop-q3-btn-submit");
+export const loopQ3Result = document.querySelector("#loop-q3-result");
+
 /**
  * Array questions DOM ---------------------------------
  */
