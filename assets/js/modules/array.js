@@ -49,12 +49,20 @@ const q6Steps = `
   <strong>- Bước 2:</strong> Nếu hợp lệ, đổi 2 phần tử bằng cách dùng biến tạm.<br />
   <strong>- Bước 3:</strong> In mảng sau khi đã đổi chỗ 2 giá trị trong mảng.<br />`;
 
+const q9Steps = `
+  <i class="fa-brands fa-earlybirds position-absolute"></i>
+  <strong>Array | Question 9:</strong> Nhập 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên.<br />
+  <strong>Các bước thực hiện (Giả sử rằng bạn đã thực hiện các bước ở hướng dẫn ban đầu): </strong><br />
+  <strong>- Bước 1:</strong> Tạo biến đếm lưu giữ số lượng số nguyên.<br />
+  <strong>- Bước 2:</strong> Lặp qua mảng, ở mỗi lần lặp xét phần tử tại lần lặp đó là số số nguyên hay không, nếu là số nguyên tăng biến đếm tương ứng lên 1.<br />
+  <strong>- Bước 3:</strong> Khi lặp xong hết mảng, in biến đếm ra giao diện.<br />`;
+
 const q10Steps = `
   <i class="fa-brands fa-earlybirds position-absolute"></i>
   <strong>Array | Question 10:</strong> So sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn.<br />
   <strong>Các bước thực hiện (Giả sử rằng bạn đã thực hiện các bước ở hướng dẫn ban đầu): </strong><br />
   <strong>- Bước 1:</strong> Tạo 2 biến đếm giữ số lượng số âm và số lượng số dương.<br />
-  <strong>- Bước 2:</strong> Lặp qua mảng, ở mỗi lần lặp xét phần tử tại lần lặp đó là số dương/ số nguyên, rồi tăng biến đếm tương ứng lên 1.<br />
+  <strong>- Bước 2:</strong> Lặp qua mảng, ở mỗi lần lặp xét phần tử tại lần lặp đó là số dương/ số âm, rồi tăng biến đếm tương ứng lên 1.<br />
   <strong>- Bước 3:</strong> Kiểm tra xem số lượng số âm lớn hơn, bé hơn hoặc bằng số dương.<br />
   <strong>- Bước 4:</strong> In ra kết quả ở bước 3 ra giao diện.<br />`;
 
@@ -67,7 +75,7 @@ export const qSteps = [
   q6Steps,
   ,
   ,
-  ,
+  q9Steps,
   q10Steps,
 ];
 
@@ -190,7 +198,33 @@ export const swap2ArrElems = (arr, idx1, idx2) => {
 
 // @Approach 3: XOR operator - luoi lam
 
-// Question 6 =============================================================
+// Question 9 =============================================================
+// Note: in this question, you should enter the array manually
+//       because getArraySize10() function just generates integer elements
+// @Approach 1: normal for loop / forEach
+// export const countInteger = arr => {
+//   let counter = 0;
+//   arr.forEach(elem => {
+//     if (Number.isInteger(elem)) counter++;
+//     // Or
+//     // if (!(elem % 1)) counter++;
+//   });
+
+//   return counter;
+// };
+
+// @Approach 2: array filter
+// export const countInteger = arr =>
+//   arr.filter(elem => Number.isInteger(elem)).length;
+
+// @Approach 3: array reduce
+export const countInteger = arr =>
+  arr.reduce(
+    (counter, elem) => (Number.isInteger(elem) ? ++counter : counter),
+    0
+  );
+
+// Question 10 =============================================================
 // @Approach 1: normal for loop / forEach
 export const countPositiveNegative = arr => {
   const counter = {
@@ -232,6 +266,6 @@ export const solArray = [
   swap2ArrElems,
   ,
   ,
-  ,
+  countInteger,
   comparePositiveNegative,
 ];
