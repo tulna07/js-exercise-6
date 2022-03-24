@@ -49,7 +49,27 @@ const q6Steps = `
   <strong>- Bước 2:</strong> Nếu hợp lệ, đổi 2 phần tử bằng cách dùng biến tạm.<br />
   <strong>- Bước 3:</strong> In mảng sau khi đã đổi chỗ 2 giá trị trong mảng.<br />`;
 
-export const qSteps = [q1Steps, q2Steps, , q4Steps, q5Steps, q6Steps];
+const q10Steps = `
+  <i class="fa-brands fa-earlybirds position-absolute"></i>
+  <strong>Array | Question 10:</strong> So sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn.<br />
+  <strong>Các bước thực hiện (Giả sử rằng bạn đã thực hiện các bước ở hướng dẫn ban đầu): </strong><br />
+  <strong>- Bước 1:</strong> Tạo 2 biến đếm giữ số lượng số âm và số lượng số dương.<br />
+  <strong>- Bước 2:</strong> Lặp qua mảng, ở mỗi lần lặp xét phần tử tại lần lặp đó là số dương/ số nguyên, rồi tăng biến đếm tương ứng lên 1.<br />
+  <strong>- Bước 3:</strong> Kiểm tra xem số lượng số âm lớn hơn, bé hơn hoặc bằng số dương.<br />
+  <strong>- Bước 4:</strong> In ra kết quả ở bước 3 ra giao diện.<br />`;
+
+export const qSteps = [
+  q1Steps,
+  q2Steps,
+  q3Steps,
+  q4Steps,
+  q5Steps,
+  q6Steps,
+  ,
+  ,
+  ,
+  q10Steps,
+];
 
 /**
  * Solutions -------------------------------------------------------------------
@@ -170,6 +190,36 @@ export const swap2ArrElems = (arr, idx1, idx2) => {
 
 // @Approach 3: XOR operator - luoi lam
 
+// Question 6 =============================================================
+// @Approach 1: normal for loop / forEach
+export const countPositiveNegative = arr => {
+  const counter = {
+    nPositive: 0,
+    nNegative: 0,
+  };
+
+  for (const elem of arr) {
+    if (!elem) continue;
+    if (elem > 0) counter.nPositive++;
+    if (elem < 0) counter.nNegative++;
+  }
+
+  return counter;
+};
+
+export const comparePositiveNegative = arr => {
+  const counter = countPositiveNegative(arr);
+
+  if (counter.nPositive > counter.nNegative)
+    return `nPositive (${counter.nPositive}) > nNegative (${counter.nNegative})`;
+
+  if (counter.nPositive < counter.nNegative)
+    return `nPositive (${counter.nPositive}) < nNegative (${counter.nNegative})`;
+
+  if (counter.nPositive === counter.nNegative)
+    return `nPositive (${counter.nPositive}) === nNegative (${counter.nNegative})`;
+};
+
 /**
  * The array contains functions solving questions 1 - 10 ---------------------------------
  */
@@ -180,4 +230,8 @@ export const solArray = [
   findMinPositive,
   findFinalEven,
   swap2ArrElems,
+  ,
+  ,
+  ,
+  comparePositiveNegative,
 ];
