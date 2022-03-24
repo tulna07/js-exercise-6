@@ -98,6 +98,7 @@ ul {
   gap: 1rem;
 
   opacity: 0;
+  visibility: hidden;
 
   border-radius: 0.3rem;
   background-color: #fff;
@@ -114,6 +115,7 @@ ul {
 
 .btn-custom:hover .question-list {
   opacity: 1;
+  visibility: visible;
   top: 130%;
 }
 
