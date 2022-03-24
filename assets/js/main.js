@@ -1,7 +1,8 @@
 import {
   isInvalidNumber,
   isInvalidArray,
-  removeEmptyStrInArray,
+  processArray,
+  getArraySize10,
 } from "./modules/helpers.js";
 import * as dom from "./modules/dom.js";
 import * as loop from "./modules/loop.js";
@@ -101,9 +102,9 @@ dom.loopQ4SubmitBtn.addEventListener("click", () => {
 });
 
 /**
- * Loop questions ---------------------------------
+ * Array questions ---------------------------------
  */
-// Question 1 - 10
+// Process questions 1 - 10
 for (const [idx, arrayBtn] of Object.entries(dom.arrayBtns)) {
   arrayBtn.addEventListener("click", () => {
     const unprocessedArray = dom.arrayInput.value.trim().split(" ");
@@ -112,7 +113,22 @@ for (const [idx, arrayBtn] of Object.entries(dom.arrayBtns)) {
       return;
     }
 
-    const processedArray = removeEmptyStrInArray(unprocessedArray);
-    dom.arrayResult.innerHTML = `Your array: ${processedArray}`;
+    dom.arrayStepBox.innerHTML = array.qSteps[idx];
+
+    // Remove empty string and convert element into number
+    const processedArray = processArray(unprocessedArray);
+
+    dom.arrayResult.innerHTML = `
+      Your array: ${processedArray}.<br>
+      Result for this question: ${array.solArray[idx](processedArray)}.
+    `;
   });
 }
+
+dom.genArrayBtn.addEventListener("click", () => {
+  const strArray = getArraySize10().join(" ");
+  dom.arrayInput.value = strArray;
+  dom.arrayResult.innerHTML = `
+  Your array: ${strArray}.
+`;
+});

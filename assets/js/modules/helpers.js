@@ -1,3 +1,5 @@
+const getRandomNumber = (min, max) => min + Math.random() * (max - min);
+
 /**
  * Loop helpers ---------------------------------
  */
@@ -18,4 +20,13 @@ export const isInvalidNumber = (input, fn = para => true) => {
 export const isInvalidArray = arr =>
   arr.find(elem => Number.isNaN(+elem)) ?? false;
 
-export const removeEmptyStrInArray = arr => arr.filter(elem => elem !== "");
+export const processArray = arr =>
+  arr.filter(elem => elem !== "").map(elem => +elem);
+
+// Get an array with size 10, each element is a number range from -10 to below 10
+export const getArraySize10 = () => {
+  const array = [];
+  for (let i = 0; i < 10; ++i) array.push(Math.floor(getRandomNumber(-10, 10)));
+
+  return array;
+};
