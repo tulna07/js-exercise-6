@@ -25,7 +25,15 @@ const q3Steps = `
   <strong>- Bước 2:</strong> Lặp qua mảng, nếu phần tử tại mỗi lần lặp < giá trị biến ở bước 1 thì cập nhật lại biến này.<br />
   <strong>- Bước 3:</strong> Sau khi lặp qua hết mảng thì trả về số bé nhất trong mảng, hiển thị kết quả ra màn hình.<br />`;
 
-export const qSteps = [q1Steps, q2Steps, q3Steps];
+const q4Steps = `
+  <i class="fa-brands fa-earlybirds position-absolute"></i>
+  <strong>Array | Question 4:</strong> Tìm số dương nhỏ nhất trong mảng.<br />
+  <strong>Các bước thực hiện (Giả sử rằng bạn đã thực hiện các bước ở hướng dẫn ban đầu): </strong><br />
+  <strong>- Bước 1:</strong> Ban đầu, tìm phần tử dương đầu tiên trong mảng, nếu không tìm thấy thì có nghĩa là mảng không có số > 0 => trả về mặc định là -1.<br />
+  <strong>- Bước 2:</strong> Nếu tìm thấy thì giữ giá trị của phần tử này và index của nó vào biến. Sau đó lặp qua mảng từ index này, nếu giá trị mỗi lần lặp bé hơn giá trị của phần tử dương bé nhất hiện tại thì cập nhật lại giá trị của phần tử dương bé nhất.<br />
+  <strong>- Bước 3:</strong> Sau khi lặp qua hết mảng thì trả về số dương nhỏ nhất trong mảng, hiển thị kết quả ra màn hình.<br />`;
+
+export const qSteps = [q1Steps, q2Steps, , q4Steps];
 
 /**
  * Solutions ---------------------------------
@@ -85,7 +93,35 @@ export const findMinElem = arr =>
 // @Approach 3: Math.min + Spread Operator
 // export const findMinElem = arr => Math.min(...arr);
 
+// Question 4
+// @Approach 1: normal for loop / forEach
+export const findMinPositive = arr => {
+  // Default return
+  if (arr.length === 0) return -1;
+
+  let minPositiveIdx = 0;
+  let minPositive =
+    arr.find((elem, idx) => {
+      minPositiveIdx = idx;
+      return elem > 0;
+    }) ?? -1;
+  if (minPositive === -1) return minPositive;
+
+  for (let i = minPositiveIdx; i < arr.length; ++i)
+    if (arr[i] > 0 && minPositive > arr[i]) minPositive = arr[i];
+
+  return minPositive > 0 ? minPositive : -1;
+};
+
+// @Approach 2: filter + Math.min()
+// const findMinPositive = arr => Math.min(...arr.filter(elem => elem > 0));
+
 /**
  * The array contains functions solving questions 1 - 10 ---------------------------------
  */
-export const solArray = [sumPositiveNums, countPositives, findMinElem];
+export const solArray = [
+  sumPositiveNums,
+  countPositives,
+  findMinElem,
+  findMinPositive,
+];
