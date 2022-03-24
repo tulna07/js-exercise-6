@@ -33,7 +33,15 @@ const q4Steps = `
   <strong>- Bước 2:</strong> Nếu tìm thấy thì giữ giá trị của phần tử này và index của nó vào biến. Sau đó lặp qua mảng từ index này, nếu giá trị mỗi lần lặp bé hơn giá trị của phần tử dương bé nhất hiện tại thì cập nhật lại giá trị của phần tử dương bé nhất.<br />
   <strong>- Bước 3:</strong> Sau khi lặp qua hết mảng thì trả về số dương nhỏ nhất trong mảng, hiển thị kết quả ra màn hình.<br />`;
 
-export const qSteps = [q1Steps, q2Steps, , q4Steps];
+const q5Steps = `
+  <i class="fa-brands fa-earlybirds position-absolute"></i>
+  <strong>Array | Question 5:</strong> Tìm số chẵn cuối cùng trong mảng. Nếu mảng không có giá trị chẵn thì trả về -1.<br />
+  <strong>Các bước thực hiện (Giả sử rằng bạn đã thực hiện các bước ở hướng dẫn ban đầu): </strong><br />
+  <strong>- Bước 1:</strong> Duyệt mảng ngược từ cuối mảng lên đầu mảng.<br />
+  <strong>- Bước 2:</strong> Trong lúc duyệt, nếu có phần tử nào là chẵn thì trả về phần tử này kết thúc chương trình in ra kết quả.<br />
+  <strong>- Bước 3:</strong> Sau khi lặp ra hết mảng mà vẫn không có phần tử nào chẵn thì trả về -1, in kết quả.<br />`;
+
+export const qSteps = [q1Steps, q2Steps, , q4Steps, q5Steps];
 
 /**
  * Solutions ---------------------------------
@@ -116,6 +124,26 @@ export const findMinPositive = arr => {
 // @Approach 2: filter + Math.min()
 // const findMinPositive = arr => Math.min(...arr.filter(elem => elem > 0));
 
+// Question 5
+// @Approach 1: normal for loop / forEach
+export const findFinalEven = arr => {
+  for (let i = arr.length - 1; i >= 0; --i) if (!(arr[i] % 2)) return arr[i];
+
+  return -1;
+};
+
+// Sida version
+// export const findFinalEven = arr => {
+//   let finalEven = -1;
+//   for (let i = 0; i < arr.length; ++i) if (!(arr[i] % 2)) finalEven = arr[i];
+
+//   return finalEven;
+// };
+
+// @Approach 2: array reduce
+// export const findFinalEven = arr =>
+//   arr.reduce((cum, elem) => (!(elem % 2) ? elem : cum), -1);
+
 /**
  * The array contains functions solving questions 1 - 10 ---------------------------------
  */
@@ -124,4 +152,5 @@ export const solArray = [
   countPositives,
   findMinElem,
   findMinPositive,
+  findFinalEven,
 ];
