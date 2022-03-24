@@ -43,3 +43,5 @@ export const arrayBtns = document.querySelectorAll(".btn-array");
 export const arrayResult = document.querySelector("#array-result");
 export const genArrayBtn = document.querySelector("#btn-gen-array");
 export const arrayStepBox = document.querySelector("#step-box-array");
+export const idx1ArrayInput = document.querySelector("#idx-1-array-input");
+export const idx2ArrayInput = document.querySelector("#idx-2-array-input");

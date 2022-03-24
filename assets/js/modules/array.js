@@ -41,12 +41,20 @@ const q5Steps = `
   <strong>- Bước 2:</strong> Trong lúc duyệt, nếu có phần tử nào là chẵn thì trả về phần tử này kết thúc chương trình in ra kết quả.<br />
   <strong>- Bước 3:</strong> Sau khi lặp ra hết mảng mà vẫn không có phần tử nào chẵn thì trả về -1, in kết quả.<br />`;
 
-export const qSteps = [q1Steps, q2Steps, , q4Steps, q5Steps];
+const q6Steps = `
+  <i class="fa-brands fa-earlybirds position-absolute"></i>
+  <strong>Array | Question 6:</strong> Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị).<br />
+  <strong>Các bước thực hiện (Giả sử rằng bạn đã thực hiện các bước ở hướng dẫn ban đầu): </strong><br />
+  <strong>- Bước 1:</strong> Nhận vào 2 indices, kiểm tra xem các inputs này có hợp lệ hay không, là số nguyên từ 0 tới array.length-1 thì hợp lệ. Nếu không hợp lệ thì in ra thông báo index không hợp lệ rồi kết thúc chương trình.<br />
+  <strong>- Bước 2:</strong> Nếu hợp lệ, đổi 2 phần tử bằng cách dùng biến tạm.<br />
+  <strong>- Bước 3:</strong> In mảng sau khi đã đổi chỗ 2 giá trị trong mảng.<br />`;
+
+export const qSteps = [q1Steps, q2Steps, , q4Steps, q5Steps, q6Steps];
 
 /**
- * Solutions ---------------------------------
+ * Solutions -------------------------------------------------------------------
  */
-// Question 1
+// Question 1 =============================================================
 // @Approach 1: normal for loop / forEach
 // export const sumPositiveNums = arr => {
 //   let result = 0;
@@ -59,7 +67,7 @@ export const qSteps = [q1Steps, q2Steps, , q4Steps, q5Steps];
 export const sumPositiveNums = arr =>
   arr.reduce((cum, elem) => (elem > 0 ? (cum += elem) : cum), 0);
 
-// Question 2
+// Question 2 =============================================================
 // @Approach 1:  normal for loop / forEach
 // export const countPositives = arr => {
 //   let counter = 0;
@@ -77,7 +85,7 @@ export const countPositives = arr =>
 // @Approach 3: array filter
 // export const countPositives = arr => arr.filter(elem => elem > 0).length;
 
-// Question 3
+// Question 3 =============================================================
 // @Approach 1:  normal for loop / forEach
 // export const findMinElem = arr => {
 //   // Default return
@@ -101,7 +109,7 @@ export const findMinElem = arr =>
 // @Approach 3: Math.min + Spread Operator
 // export const findMinElem = arr => Math.min(...arr);
 
-// Question 4
+// Question 4 =============================================================
 // @Approach 1: normal for loop / forEach
 export const findMinPositive = arr => {
   // Default return
@@ -124,7 +132,7 @@ export const findMinPositive = arr => {
 // @Approach 2: filter + Math.min()
 // const findMinPositive = arr => Math.min(...arr.filter(elem => elem > 0));
 
-// Question 5
+// Question 5 =============================================================
 // @Approach 1: normal for loop / forEach
 export const findFinalEven = arr => {
   for (let i = arr.length - 1; i >= 0; --i) if (!(arr[i] % 2)) return arr[i];
@@ -144,6 +152,24 @@ export const findFinalEven = arr => {
 // export const findFinalEven = arr =>
 //   arr.reduce((cum, elem) => (!(elem % 2) ? elem : cum), -1);
 
+// Question 6 =============================================================
+// @Approach 1: temporary var
+// export const swap2ArrElems = (arr, idx1, idx2) => {
+//   const temp = arr[idx1];
+//   arr[idx1] = arr[idx2];
+//   arr[idx2] = temp;
+
+//   return arr;
+// };
+
+// @Approach 2: destructuring assignment
+export const swap2ArrElems = (arr, idx1, idx2) => {
+  [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+  return arr;
+};
+
+// @Approach 3: XOR operator - luoi lam
+
 /**
  * The array contains functions solving questions 1 - 10 ---------------------------------
  */
@@ -153,4 +179,5 @@ export const solArray = [
   findMinElem,
   findMinPositive,
   findFinalEven,
+  swap2ArrElems,
 ];

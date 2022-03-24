@@ -367,10 +367,10 @@
             >
               <i class="fa-brands fa-earlybirds position-absolute"></i>
               <strong>Hướng dẫn:</strong><br />
-              <strong>- Bước 1:</strong> Nhập vào một mảng có size >= 0 theo
-              định dạng giống ghi chú dưới ô input. Hoặc bấm nút "Array with 10
-              elems" để tạo một mảng có 10 phần tử là số nguyên từ -10 tới dưới
-              10.
+              <strong>- Bước 1:</strong> Nhập vào một mảng có size > 0 theo định
+              dạng giống ghi chú dưới ô input. Hoặc bấm nút "Array with 10
+              elems" để tạo một mảng có 10 phần tử là số nguyên ngẫu nhiên từ
+              -10 tới dưới 10.
               <br />
               <strong>- Bước 2:</strong> Bấm vào các nút Q_n (1 <= n <= 10). Nếu
               input không hợp lệ thì sẽ hiển thị thông báo không hợp lệ. Nếu
@@ -398,11 +398,42 @@
                     >Enter an array with separated spaces among elements,
                     example:__6.9_1__2.2____3_100_ (_ is a space)</small
                   >
-                </div>
-                <div class="btn-box text-center mb-3">
-                  <button id="btn-gen-array" class="btn btn-custom">
-                    Array with 10 elems
-                  </button>
+                  <p>The 2 inputs below are used for question 6</p>
+                  <div class="form-array-q6 d-flex mb-3">
+                    <div class="form-array-idx-1">
+                      <label for="">Index 1st</label>
+                      <input
+                        type="text"
+                        name=""
+                        id="idx-1-array-input"
+                        class="form-control"
+                        placeholder="Default is 0"
+                        aria-describedby="helpId"
+                      />
+                      <small id="helpId" class="text-muted"
+                        >Enter an integer >= 0</small
+                      >
+                    </div>
+                    <div class="form-array-idx-2">
+                      <label for="">Index 2nd</label>
+                      <input
+                        type="text"
+                        name=""
+                        id="idx-2-array-input"
+                        class="form-control"
+                        placeholder="Default is 0"
+                        aria-describedby="helpId"
+                      />
+                      <small id="helpId" class="text-muted"
+                        >Enter an integer >= 0</small
+                      >
+                    </div>
+                  </div>
+                  <div class="btn-box text-center mb-3">
+                    <button id="btn-gen-array" class="btn btn-custom">
+                      Array with 10 elems
+                    </button>
+                  </div>
                 </div>
                 <div class="btn-box row">
                   <div class="col-2">

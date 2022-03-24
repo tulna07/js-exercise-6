@@ -1,8 +1,6 @@
+// Random number from min to below max
 const getRandomNumber = (min, max) => min + Math.random() * (max - min);
 
-/**
- * Loop helpers ---------------------------------
- */
 // @Check whether input with a single number is invalid or not
 export const isInvalidNumber = (input, fn = para => true) => {
   if (Number.isNaN(input) || input < 0 || !fn(input)) {
