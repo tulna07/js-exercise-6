@@ -361,10 +361,21 @@
         <!-- Array: Question 1 - 10  -->
         <div class="question-box row justify-content-center align-items-center">
           <div class="col-5">
-            <div class="step-box bg-white position-relative">
+            <div
+              id="step-box-array"
+              class="step-box bg-white position-relative"
+            >
               <i class="fa-brands fa-earlybirds position-absolute"></i>
-              Nhấn các questions tương ứng để hiện đề bài, bước làm và kết quả
-              😁
+              <strong>Hướng dẫn:</strong><br />
+              <strong>- Bước 1:</strong> Nhập vào một mảng có size >= 0 theo
+              định dạng giống ghi chú dưới ô input. Hoặc bấm nút "Array with 10
+              elems" để tạo một mảng có 10 phần tử là số nguyên từ -10 tới dưới
+              10.
+              <br />
+              <strong>- Bước 2:</strong> Bấm vào các nút Q_n (1 <= n <= 10). Nếu
+              input không hợp lệ thì sẽ hiển thị thông báo không hợp lệ. Nếu
+              không thì sẽ hiển thị mảng đã nhập, đề bài, tính toán lời giải cho
+              câu hỏi đã bấm và hiển thị.
             </div>
           </div>
           <div class="col-4">
@@ -387,6 +398,11 @@
                     >Enter an array with separated spaces among elements,
                     example:__6.9_1__2.2____3_100_ (_ is a space)</small
                   >
+                </div>
+                <div class="btn-box text-center mb-3">
+                  <button id="btn-gen-array" class="btn btn-custom">
+                    Array with 10 elems
+                  </button>
                 </div>
                 <div class="btn-box row">
                   <div class="col-2">
