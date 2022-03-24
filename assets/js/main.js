@@ -113,14 +113,38 @@ for (const [idx, arrayBtn] of Object.entries(dom.arrayBtns)) {
       return;
     }
 
-    dom.arrayStepBox.innerHTML = array.qSteps[idx];
-
     // Remove empty string and convert element into number
     const processedArray = processArray(unprocessedArray);
 
+    // These lines are used for question 6
+    // Start
+    let idx1Val;
+    let idx2Val;
+    if (+idx === 5) {
+      idx1Val = +dom.idx1ArrayInput.value;
+      idx2Val = +dom.idx2ArrayInput.value;
+
+      if (
+        isInvalidNumber(idx1Val, Number.isInteger) ||
+        isInvalidNumber(idx2Val, Number.isInteger) ||
+        idx1Val >= processedArray.length ||
+        idx2Val >= processedArray.length
+      ) {
+        dom.arrayResult.innerHTML = "❌ Invalid index.";
+        return;
+      }
+    }
+    // End
+
+    dom.arrayStepBox.innerHTML = array.qSteps[idx];
+
     dom.arrayResult.innerHTML = `
       Your array: ${processedArray}.<br>
-      Result for this question: ${array.solArray[idx](processedArray)}.
+      Result for this question: ${array.solArray[idx](
+        processedArray,
+        idx1Val,
+        idx2Val
+      )}.
     `;
   });
 }
