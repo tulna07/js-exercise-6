@@ -1,3 +1,5 @@
+import { isPrime } from "./helpers.js";
+
 /**
  * Steps text ---------------------------------
  */
@@ -49,6 +51,13 @@ const q6Steps = `
   <strong>- Bước 2:</strong> Nếu hợp lệ, đổi 2 phần tử bằng cách dùng biến tạm.<br />
   <strong>- Bước 3:</strong> In mảng sau khi đã đổi chỗ 2 giá trị trong mảng.<br />`;
 
+const q8Steps = `
+  <i class="fa-brands fa-earlybirds position-absolute"></i>
+  <strong>Array | Question 8:</strong> Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số nguyên tố thì trả về –1.<br />
+  <strong>Các bước thực hiện (Giả sử rằng bạn đã thực hiện các bước ở hướng dẫn ban đầu): </strong><br />
+  <strong>- Bước 1:</strong> Lặp qua mảng, ở mỗi lần lặp kiểm tra xem giá trị phần tử mảng tại lần lặp đó có phải số nguyên tố hay không, nếu gặp số nguyên tố lần đầu tiên thì nhận số nguyên tố đó, in ra màn hình và kết thúc chương trình.<br />
+  <strong>- Bước 2:</strong> Nếu không có số nguyên tố trong mảng thì trả về -1, in ra màn hình và kết thúc chương trình.<br />`;
+
 const q9Steps = `
   <i class="fa-brands fa-earlybirds position-absolute"></i>
   <strong>Array | Question 9:</strong> Nhập 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên.<br />
@@ -74,7 +83,7 @@ export const qSteps = [
   q5Steps,
   q6Steps,
   ,
-  ,
+  q8Steps,
   q9Steps,
   q10Steps,
 ];
@@ -198,6 +207,17 @@ export const swap2ArrElems = (arr, idx1, idx2) => {
 
 // @Approach 3: XOR operator - luoi lam
 
+// Question 8 =============================================================
+// @Approach 1: normal for loop / forEach
+export const findFirstPrime = arr => {
+  for (let i = 0; i < arr.length; ++i) if (isPrime(arr[i])) return arr[i];
+
+  return -1;
+};
+
+// @Approach 2: array find
+// export const findFirstPrime = arr => arr.find(elem => isPrime(elem)) ?? -1;
+
 // Question 9 =============================================================
 // Note: in this question, you should enter the array manually
 //       because getArraySize10() function just generates integer elements
@@ -265,7 +285,7 @@ export const solArray = [
   findFinalEven,
   swap2ArrElems,
   ,
-  ,
+  findFirstPrime,
   countInteger,
   comparePositiveNegative,
 ];
