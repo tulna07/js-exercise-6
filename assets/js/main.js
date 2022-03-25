@@ -47,7 +47,7 @@ dom.toggleThemeBtn.onclick = function () {
 dom.loopQ1SubmitBtn.addEventListener("click", () => {
   const x = +dom.loopQ1InputX.value;
 
-  if (isInvalidNumber(x, Number.isInteger)) {
+  if (isInvalidNumber(x, input => !Number.isInteger(input))) {
     dom.loopQ1Result.innerHTML = `❌ Invalid input. Please enter a integer number >= 0.`;
     return;
   }
@@ -67,7 +67,7 @@ dom.loopQ2SubmitBtn.addEventListener("click", () => {
     return;
   }
 
-  if (isInvalidNumber(n, n => !(!Number.isInteger(n) || n < 1))) {
+  if (isInvalidNumber(n, input => !Number.isInteger(n) || n < 1)) {
     dom.loopQ2Result.innerHTML += `❌ Invalid input "n". Please enter a integer number >= 1.`;
     return;
   }
@@ -79,7 +79,7 @@ dom.loopQ2SubmitBtn.addEventListener("click", () => {
 dom.loopQ3SubmitBtn.addEventListener("click", () => {
   const n = +dom.loopQ3InputN.value;
 
-  if (isInvalidNumber(n, Number.isInteger)) {
+  if (isInvalidNumber(n, input => !Number.isInteger(input))) {
     dom.loopQ3Result.innerHTML = `❌ Invalid input "n". Please enter a integer number >= 0.`;
     return;
   }
@@ -94,7 +94,7 @@ dom.loopQ4SubmitBtn.addEventListener("click", () => {
   dom.loopQ4Result.innerHTML = "Notification Here 😁";
   dom.divBoxes.innerHTML = "";
 
-  if (isInvalidNumber(input, Number.isInteger)) {
+  if (isInvalidNumber(input, input => !Number.isInteger(input))) {
     dom.loopQ4Result.innerHTML = `❌ Invalid input. Please enter a integer number >= 0.`;
     return;
   }
@@ -106,7 +106,7 @@ dom.loopQ4SubmitBtn.addEventListener("click", () => {
 dom.loopQ5SubmitBtn.addEventListener("click", () => {
   const input = +dom.loopQ5Input.value;
 
-  if (isInvalidNumber(input, input => Number.isInteger(input) && input >= 2)) {
+  if (isInvalidNumber(input, input => !Number.isInteger(input) || input < 2)) {
     dom.loopQ5Result.innerHTML = `❌ Invalid input. Please enter a integer number >= 2.`;
     return;
   }
@@ -143,8 +143,8 @@ for (const [idx, arrayBtn] of Object.entries(dom.arrayBtns)) {
       idx2Val = +dom.idx2ArrayInput.value;
 
       if (
-        isInvalidNumber(idx1Val, Number.isInteger) ||
-        isInvalidNumber(idx2Val, Number.isInteger) ||
+        isInvalidNumber(idx1Val, input => !Number.isInteger(input)) ||
+        isInvalidNumber(idx2Val, input => !Number.isInteger(input)) ||
         idx1Val >= processedArray.length ||
         idx2Val >= processedArray.length
       ) {

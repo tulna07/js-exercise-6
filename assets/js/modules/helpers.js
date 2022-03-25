@@ -8,8 +8,8 @@ const getRandomNumber = (min, max) => min + Math.random() * (max - min);
 
 // Check whether input with a single number is invalid or not
 // - invalid: NaN, negative and other conditions based on callback
-export const isInvalidNumber = (input, fn = para => true) => {
-  if (Number.isNaN(input) || input < 0 || !fn(input)) {
+export const isInvalidNumber = (input, fn = para => false) => {
+  if (Number.isNaN(input) || input < 0 || fn(input)) {
     return true;
   }
 
