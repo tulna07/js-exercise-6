@@ -307,14 +307,26 @@
           <div class="col-5">
             <div class="step-box bg-white position-relative">
               <i class="fa-brands fa-earlybirds position-absolute"></i>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-              quibusdam reiciendis soluta asperiores quisquam doloremque facilis
-              pariatur fugiat amet molestias, sed, quo, ad optio iste debitis
-              vel consequatur quia labore? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Unde quibusdam reiciendis soluta
-              asperiores quisquam doloremque facilis pariatur fugiat amet
-              molestias, sed, quo, ad optio iste debitis vel consequatur quia
-              labore?
+              <strong>Loop | Question 5:</strong> Nhập vào một số. Khi click vào
+              button thì in ra các số nguyên tố tới giá trị của ô input.<br />
+              <strong>Các bước thực hiện:</strong><br />
+              <strong>- Bước 1:</strong> Thiết kế giao diện, cho người dùng nhập
+              số x là số nguyên >= 2 (Vì số nguyên tố là số tự nhiên lớn hơn 1,
+              ta nhập chặn dưới của khoảng xét là số từ 2 trở đi).<br />
+              <strong>- Bước 2:</strong> Nếu không thỏa điều kiện ở bước 1 thì
+              in ra thông báo input không hợp lệ và kết thúc chương trình.<br />
+              <strong>- Bước 3:</strong> Nếu thỏa điều kiện bước 1 thì dùng vòng
+              lặp for từ 2 tới số nhận vào từ input, xét số ở mỗi vòng lặp có
+              phải là số nguyên tố không. Hàm isPrime(number) dùng để check số
+              nguyên tố.<br />
+              Ý tưởng và nhận xét: số bé hơn 2 và số có dấu chấm động sẽ không
+              là số nguyên tố (số nguyên tố là số tự nhiên lớn hơn 1), số chẵn
+              dương khác 2 (2 là số nguyên tố duy nhất chẵn) cũng sẽ không là số
+              nguyên tố (vì chia hết tối thiểu cho 2). Vậy ta sẽ bắt đầu xét
+              những số lẻ dương khác 1 trở đi xem có phải là số nguyên tố
+              không.<br />
+              <strong>- Bước 4:</strong> Hiển thị những số nguyên tố ra giao
+              diện.
             </div>
           </div>
           <div class="col-4">
@@ -328,32 +340,24 @@
                   <input
                     type="text"
                     name=""
-                    id="q1-input-x"
+                    id="loop-q5-input"
                     class="form-control"
                     placeholder=""
                     aria-describedby="helpId"
                   />
                   <small id="helpId" class="text-muted"
-                    >Enter a number >= 0</small
+                    >Enter a integer number >= 2</small
                   ><br />
-                  <label for="">Number n:</label>
-                  <input
-                    type="text"
-                    name=""
-                    id="q1-input-n"
-                    class="form-control"
-                    placeholder=""
-                    aria-describedby="helpId"
-                  />
-                  <small id="helpId" class="text-muted"
-                    >Enter a number >= 0</small
-                  >
                 </div>
                 <div class="btn-box text-center">
-                  <button class="btn btn-custom">Submit</button>
+                  <button id="loop-q5-btn-submit" class="btn btn-custom">
+                    Submit
+                  </button>
                 </div>
               </div>
-              <div class="card-footer text-muted">Footer</div>
+              <div id="loop-q5-result" class="card-footer text-muted">
+                Notification Here 😁
+              </div>
             </div>
           </div>
         </div>

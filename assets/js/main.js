@@ -3,6 +3,7 @@ import {
   isInvalidArray,
   processArray,
   getArraySize10,
+  isPrime,
 } from "./modules/helpers.js";
 import * as dom from "./modules/dom.js";
 import * as loop from "./modules/loop.js";
@@ -99,6 +100,23 @@ dom.loopQ4SubmitBtn.addEventListener("click", () => {
   }
 
   dom.divBoxes.innerHTML = loop.generateDivs(input);
+});
+
+// Question 5
+dom.loopQ5SubmitBtn.addEventListener("click", () => {
+  const input = +dom.loopQ5Input.value;
+
+  if (isInvalidNumber(input, input => Number.isInteger(input) && input >= 2)) {
+    dom.loopQ5Result.innerHTML = `❌ Invalid input. Please enter a integer number >= 2.`;
+    return;
+  }
+
+  const primeArr = [];
+  for (let i = 2; i <= input; ++i) if (isPrime(i)) primeArr.push(i);
+
+  dom.loopQ5Result.innerHTML = `Prime are: `;
+
+  dom.loopQ5Result.innerHTML += primeArr;
 });
 
 /**
