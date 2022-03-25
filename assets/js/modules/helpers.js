@@ -21,7 +21,7 @@ export const isInvalidNumber = (input, fn = para => true) => {
 export const isPrime = number => {
   if (number === 2) return true;
 
-  if (number < 2 || !(number % 2)) return false;
+  if (!Number.isInteger(number) || number < 2 || !(number % 2)) return false;
 
   for (let i = 3; i < number; i += 2) if (!(number % i)) return false;
 
