@@ -51,6 +51,13 @@ const q6Steps = `
   <strong>- Bước 2:</strong> Nếu hợp lệ, đổi 2 phần tử bằng cách dùng biến tạm.<br />
   <strong>- Bước 3:</strong> In mảng sau khi đã đổi chỗ 2 giá trị trong mảng.<br />`;
 
+const q7Steps = `
+  <i class="fa-brands fa-earlybirds position-absolute"></i>
+  <strong>Array | Question 7:</strong> Sắp xếp mảng theo thứ tự tăng dần.<br />
+  <strong>Các bước thực hiện (Giả sử rằng bạn đã thực hiện các bước ở hướng dẫn ban đầu): </strong><br />
+  <strong>- Bước 1:</strong> Sử dụng thuật toán bubble sort, các thuật toán sort khác hoặc hàm sort có sẵn trong JavaScript.<br />
+  <strong>- Bước 2:</strong> In mảng đã sắp xếp xong mảng.<br />`;
+
 const q8Steps = `
   <i class="fa-brands fa-earlybirds position-absolute"></i>
   <strong>Array | Question 8:</strong> Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số nguyên tố thì trả về –1.<br />
@@ -82,7 +89,7 @@ export const qSteps = [
   q4Steps,
   q5Steps,
   q6Steps,
-  ,
+  q7Steps,
   q8Steps,
   q9Steps,
   q10Steps,
@@ -207,6 +214,23 @@ export const swap2ArrElems = (arr, idx1, idx2) => {
 
 // @Approach 3: XOR operator - luoi lam
 
+// Question 7 =============================================================
+export const ascendingBubbleSort = arr => {
+  for (let i = 0; i < arr.length - 1; ++i) {
+    let isSwapped = false;
+
+    for (let j = 0; j < arr.length - i + 1; ++j)
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        isSwapped = true;
+      }
+
+    if (!isSwapped) return arr;
+  }
+
+  return arr;
+};
+
 // Question 8 =============================================================
 // @Approach 1: normal for loop / forEach
 export const findFirstPrime = arr => {
@@ -284,7 +308,7 @@ export const solArray = [
   findMinPositive,
   findFinalEven,
   swap2ArrElems,
-  ,
+  ascendingBubbleSort,
   findFirstPrime,
   countInteger,
   comparePositiveNegative,
