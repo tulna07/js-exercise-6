@@ -35,6 +35,11 @@ export const loopQ4SubmitBtn = document.querySelector("#loop-q4-btn-submit");
 export const divBoxes = document.querySelector("#div-boxes");
 export const loopQ4Result = document.querySelector("#loop-q4-result");
 
+// Question 5
+export const loopQ5Input = document.querySelector("#loop-q5-input");
+export const loopQ5SubmitBtn = document.querySelector("#loop-q5-btn-submit");
+export const loopQ5Result = document.querySelector("#loop-q5-result");
+
 /**
  * Array questions DOM ---------------------------------
  */
