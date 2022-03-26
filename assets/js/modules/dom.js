@@ -50,19 +50,3 @@ export const genArrayBtn = document.querySelector("#btn-gen-array");
 export const arrayStepBox = document.querySelector("#step-box-array");
 export const idx1ArrayInput = document.querySelector("#idx-1-array-input");
 export const idx2ArrayInput = document.querySelector("#idx-2-array-input");
-
-const arr = [4, 3, 2, 1];
-
-const ascendingBubbleSort = arr => {
-  for (let i = 0; i < arr.length - 1; ++i) {
-    let isSwapped = false;
-
-    for (let j = 0; i < arr.length - i + 1; ++j)
-      if (arr[j] > arr[j + 1]) {
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-        isSwapped = true;
-      }
-
-    if (!isSwapped) return;
-  }
-};
